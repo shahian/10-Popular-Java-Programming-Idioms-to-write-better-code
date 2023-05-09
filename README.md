@@ -261,6 +261,7 @@ InputStream is = null;
 OutputStream os = null;
 
 try { 
+
 is = new FileInputStream("application.json")
 os = new FileOutPutStream("application.log")
 }catch (IOException io) {
@@ -275,12 +276,14 @@ problems, if first stream will throw exception then close from second will never
 You can also use try with resource in Java to write similar code, its actually bit easier now:
 
 ``
+
 try (InputStream is = new FileInputStream("application.json");
      OutputStream os = new FileOutputStream("application.log")) {
 // code to read from input stream and write to output stream
 } catch (IOException e) {
 // exception handling code
 }
+
 ``
 
 In this version, we declare the input and output streams in the try-with-resources statement, separated by a semicolon. The try block is followed by the catch block to handle any IOExceptions that might occur.
