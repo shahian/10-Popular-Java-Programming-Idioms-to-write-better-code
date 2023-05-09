@@ -10,6 +10,7 @@ By incorporating these best practices into your Java programming workflow, you c
 1. Calling equals() on String literals or known objects:
 
 This helps prevent potential NullPointerException by invoking equals() on the known object instead of the variable.
+
 2. Using entrySet() to loop over HashMap:
 
 Instead of using the key set, iterating over the entry set allows direct access to both keys and values, improving efficiency.
