@@ -12,18 +12,18 @@ By incorporating these best practices into your Java programming workflow, you c
 This helps prevent potential NullPointerException by invoking equals() on the known object instead of the variable.
 For a long time while writing Java code, I used to invoke equals method like below:
 
-``
+```
 if(givenString.equals("YES")){
 // do something.
 }
-``
+```
 
 It’s natural because it reads better but its not safe. You can prevent a potential NullPointerException by calling equals() on String literal, if one object is happen to be Sring literal or on known object e.g.
 
-``
+```
 "TRUE".equals(givenBoolean)
 "YES".equals(givenString)
-``
+```
 
 if you do reverse e.g. givenBoolean.equals(“YES”) then it will throw NullPointerException if givenBoolean is null, but if you follow this idiom then it will just return false without throwing any NPE. This is a much better code, its safe and robust. In fact this is one of the popular ways to avoid NullPointerException in Java.
 
